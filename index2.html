@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Connect</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        /* Basic styles for the slider */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%; /* Ensure the image takes the full width of the slide */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-button {
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <main>
+            <img src="" class="slide" alt="">
+            <img src="" class="slide" alt="">
+            <img src="" class="slide" alt="">
+            <img src="" class="slide" alt="">
+        </main>
+
+        <h1>Blood Bank Connect</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#donate">Donate Blood</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Blood Donation</h2>
+            <p>Blood donation is a vital part of healthcare. It saves lives and improves the health of those in need.</p>
+        </section>
+
+        <section id="donate">
+            <h2>Donate Blood</h2>
+            <form id="donationForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="bloodType">Blood Type:</label>
+                <select id="bloodType" required>
+                    <option value="">Select your blood type</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <div id="confirmationMessage"></div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="contactName">Your Name:</label>
+                <input type="text" id="contactName" required>
+                
+                <label for="contactEmail">Your Email:</label>
+                <input type="email" id="contactEmail" required>
+                
+                <label for="message">Message:</label>
+                < textarea id="message" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="contactConfirmationMessage"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Blood Bank Connect. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Optional: Auto slide every 5 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

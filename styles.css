@@ -1,0 +1,455 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+
+html,body{
+height: 100%;
+width: 100%;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.text {
+    flex: 1;
+    margin-left: 90px; /* Space between text and image */
+}
+.image {
+    flex: 1;
+    text-align: right; /* Align image to the right */
+    display: flex;
+    margin-left: 60px;
+}
+.textSec{
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 80px;
+}
+
+.imageSec{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 90px;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 10px; 
+    }
+
+    .text, .image, .textSec, .imageSec {
+        width: 100%; 
+        text-align: center; 
+    }
+
+    .image img {
+        width: 80%; 
+        height: auto; 
+    }
+
+    .imageSec img {
+        width: 80%; /* Responsive image size */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transition: margin-top 0.3s ease;
+}
+.slider.open {
+    margin-top: 350px; 
+}
+.slider-container {
+    display: flex;                          /* Align slides in a row */
+    transition: transform 0.5s ease;  /* Smooth transition for sliding */
+}
+
+.slide {
+    min-width: 100%; 
+    box-sizing: border-box; /* Include padding and border in width */
+    max-height: 70vh;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .slider {
+        max-height: 50vh; /* Adjust max-height for smaller screens */
+    }
+
+    .slide {
+        max-height: 50vh;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .slider {
+        max-height: 40vh; /* Further adjust for very small screens */
+    }
+
+    .slide {
+        max-height: 40vh;
+    }
+}
+
+img {
+    width: 100%;             /* Make images responsive */
+    height: 450px;
+    display: block;          /* Remove bottom space */
+}
+
+header {
+    background: #c42a37;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #c42a37;
+    position: relative;
+    height: 70px;
+}
+.logo{
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+nav ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+nav ul li{
+    list-style-type: none;
+    color: #c42a37;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+.menu-icon{
+    display: none;
+}
+.menu-icon i{
+    color: #fff;
+    font-size: 30px;
+}
+
+
+main {
+    padding: 20px;
+}
+.donor-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.donor-content {
+    flex: 1;
+}
+
+.donor-content h1 {
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+p {
+    line-height: 1.6;
+    color: black;
+}
+
+.donor-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.donor-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
+.donor-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+    .donor-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .donor-image {
+        width: 100%; /* Make image container full width */
+        display: flex;
+        justify-content: flex-end; /* Align to the top right */
+        align-items: flex-start; /* Align image to the top */
+    }
+
+    .donor-image img {
+        width: auto; /* Maintain aspect ratio */
+        max-width: 50%; /* Restrict image width */
+    }
+}
+
+section {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #c42a37;
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background: #c42a37;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkred; /* Darker shade for hover effect */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #c42a37;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 660px) {
+    
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #c42a37;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 20px;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
+}
+
+
+/* card section */
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.team-member {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 350px; 
+    text-align: center;
+    cursor: pointer;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px; 
+    height: 90px; 
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+}
+.team-member h3:hover{
+    text-decoration: underline;
+}
+.team-member p {
+    margin: 5px 0;
+}
+
+/* Footer Section */
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Prevent sections from becoming too narrow */
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #c42a37;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #c42a37;
+    font-size: 1rem;
+    display: block;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    color: #555;
+    padding: 10px;
+}
+
+.subscribe {
+    text-align: left;
+}
+
+.subscribe p {
+    margin-bottom: 10px;
+    color: #555;
+    padding: 10px;
+}
+
+.subscribe input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Form Styles */
+
+form {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    color: #333333; /* Dark gray for labels */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #cccccc; 
+    border-radius: 4px;
+    background-color: #ffffff;    /*for input field*/
+    color: #333333; 
+}
+
+input[type="submit"],
+button {
+    background-color: #d32f2f; 
+    color: #ffffff; 
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #b71c1c; 
+}
