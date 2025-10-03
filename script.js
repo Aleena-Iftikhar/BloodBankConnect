@@ -71,6 +71,6 @@ document.addEventListener("DOMContentLoaded", function() {
 /* join button */
  
 document.getElementById('joinUsButton').addEventListener('click', function () {
-    alert('Thank you for your interest in becoming a donor!');
+    alert('Thank you for your interest in becoming a donor! Please fill out the "Donate Blood" form.');
 });    
   
